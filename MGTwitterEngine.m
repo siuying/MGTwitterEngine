@@ -1151,7 +1151,9 @@
   if (count > 0) {
     [params setObject:[NSString stringWithFormat:@"%d", count] forKey:@"count"];
   }
-  
+	
+  [params setObject:[NSString stringWithFormat:@"%d", 1] forKey:@"include_my_retweet"];
+
   return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
                           requestType:MGTwitterHomeTimelineRequest 
                          responseType:MGTwitterStatuses];
