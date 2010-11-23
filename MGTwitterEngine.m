@@ -1388,6 +1388,8 @@
 - (NSString *)getRecentlyUpdatedFriendsForCursor:(MGTwitterEngineCursorID)cursor {
     NSString *path = [NSString stringWithFormat:@"statuses/friends.%@", API_FORMAT];
     MGTwitterRequestType requestType = MGTwitterFriendUpdatesRequest;
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:1];
 	[params setObject:[NSString stringWithFormat:@"%llu", cursor] forKey:@"cursor"];
     return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
                             requestType:requestType 
