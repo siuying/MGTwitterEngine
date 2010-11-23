@@ -1393,7 +1393,7 @@
 	[params setObject:[NSString stringWithFormat:@"%llu", cursor] forKey:@"cursor"];
     return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
                             requestType:requestType 
-                           responseType:MGTwitterUsers];
+                           responseType:MGTwitterMiscellaneous];
 }
 
 #pragma mark -
