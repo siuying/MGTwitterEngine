@@ -124,6 +124,7 @@
 // User methods
 
 - (NSString *)getRecentlyUpdatedFriendsFor:(NSString *)username startingAtPage:(int)pageNum; // statuses/friends & statuses/friends/user
+- (NSString *)getRecentlyUpdatedFriendsForCursor:(MGTwitterEngineCursorID)cursor; // statuses/friends
 
 - (NSString *)getFollowersIncludingCurrentStatus:(BOOL)flag; // statuses/followers
 

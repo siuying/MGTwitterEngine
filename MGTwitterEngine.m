@@ -1385,6 +1385,14 @@
                            responseType:MGTwitterUsers];
 }
 
+- (NSString *)getRecentlyUpdatedFriendsForCursor:(MGTwitterEngineCursorID)cursor {
+    NSString *path = [NSString stringWithFormat:@"statuses/friends.%@", API_FORMAT];
+    MGTwitterRequestType requestType = MGTwitterFriendUpdatesRequest;
+	[params setObject:[NSString stringWithFormat:@"%llu", cursor] forKey:@"cursor"];
+    return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
+                            requestType:requestType 
+                           responseType:MGTwitterUsers];
+}
 
 #pragma mark -
 
