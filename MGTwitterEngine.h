@@ -126,6 +126,7 @@
 - (NSString *)getRecentlyUpdatedFriendsFor:(NSString *)username startingAtPage:(int)pageNum; // statuses/friends & statuses/friends/user
 - (NSString *)getRecentlyUpdatedFriendsForCursor:(MGTwitterEngineCursorID)cursor; // statuses/friends
 
+- (NSString *)getFollowersIncludingCurrentStatusForCursor:(MGTwitterEngineCursorID)cursor;  // statuses/followers
 - (NSString *)getFollowersIncludingCurrentStatus:(BOOL)flag; // statuses/followers
 
 - (NSString *)getUserInformationFor:(NSString *)usernameOrID; // users/show
