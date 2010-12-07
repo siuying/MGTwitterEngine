@@ -243,6 +243,8 @@
 
 - (NSString *)getCurrentTrends; // current trends
 
+-(NSString *) getSavedSearches;
+
 #endif
 
 @end

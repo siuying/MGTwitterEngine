@@ -2065,6 +2065,13 @@
                            responseType:MGTwitterSearchResults];
 }
 
+-(NSString *) getSavedSearches 
+{
+	NSString *path = [NSString stringWithFormat:@"saved_searches.%@", API_FORMAT];
+    return [self _sendRequestWithMethod:nil path:path queryParameters:nil body:nil 
+                            requestType:MGTwitterSavedSearchRequest 
+                           responseType:MGTwitterSearchResults];
+}
 
 #endif
 
