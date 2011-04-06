@@ -888,7 +888,6 @@
                  withParsedObjects:(NSArray *)parsedObjects
 {
     // Forward appropriate message to _delegate, depending on responseType.
-	NSLog(@"here at parsingSucceededForRequest");
     switch (responseType) {
         case MGTwitterStatuses:
         case MGTwitterStatus:
@@ -1151,6 +1150,8 @@
   if (count > 0) {
     [params setObject:[NSString stringWithFormat:@"%d", count] forKey:@"count"];
   }
+
+  [params setObject:@"true" forKey:@"include_entities"];
 	
   [params setObject:[NSString stringWithFormat:@"%d", 1] forKey:@"include_my_retweet"];
 
@@ -1217,11 +1218,14 @@
     if (count > 0) {
         [params setObject:[NSString stringWithFormat:@"%d", count] forKey:@"count"];
     }
+    
+    [params setObject:@"true" forKey:@"include_entities"];
+    
     if (username) {
         path = [NSString stringWithFormat:@"statuses/user_timeline/%@.%@", username, API_FORMAT];
 		requestType = MGTwitterUserTimelineForUserRequest;
     }
-    
+
     return [self _sendRequestWithMethod:nil path:path queryParameters:params body:nil 
                             requestType:requestType 
                            responseType:MGTwitterStatuses];
@@ -2032,6 +2036,8 @@
         [params setObject:geocode forKey:@"geocode"];
     }
 	
+    [params setObject:@"true" forKey:@"include_entities"];
+    
 	/*
 	NOTE: These parameters are also available but not implemented yet:
 	
@@ -2142,7 +2148,7 @@
 }
 
 - (void)setAccessToken: (OAToken *)token{
-	[_accessToken autorelease];
+	[_accessToken release];
 	_accessToken = [token retain];
 }
 
