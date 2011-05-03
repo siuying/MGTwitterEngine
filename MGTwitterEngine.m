@@ -51,7 +51,7 @@
 #define TWITTER_DOMAIN          @"api.twitter.com/1"
 
 #if YAJL_AVAILABLE || TOUCHJSON_AVAILABLE
-	#define TWITTER_SEARCH_DOMAIN	@"search.twitter.com"
+	#define TWITTER_SEARCH_DOMAIN	@"api.twitter.com/1"
 #endif
 #define HTTP_POST_METHOD        @"POST"
 #define MAX_MESSAGE_LENGTH      140 // Twitter recommends tweets of max 140 chars
