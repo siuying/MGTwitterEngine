@@ -2064,7 +2064,7 @@
 
 - (NSString *)getCurrentTrends
 {
-    NSString *path = [NSString stringWithFormat:@"trends/current.%@", API_FORMAT];
+    NSString *path = [NSString stringWithFormat:@"trends/1.%@", API_FORMAT];
     
     return [self _sendRequestWithMethod:nil path:path queryParameters:nil body:nil 
                             requestType:MGTwitterSearchCurrentTrendsRequest 
